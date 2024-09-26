@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:route_app/enums/breakpoint.dart';
-import 'package:route_app/widgets/small_widget.dart';
+import '../../enums/breakpoint.dart';
+import '../../widgets/large_widget.dart';
+import '../../widgets/small_widget.dart';
 
 class ResponsiveHome extends StatelessWidget {
   const ResponsiveHome({super.key});
@@ -30,20 +31,37 @@ class ResponsiveHome extends StatelessWidget {
     return _bodyForLargeScreen(context);
   }
 
+  //* Small Screen ____________________________________________________________
+
   Widget _bodyForSmallScreen(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 12.0),
-      child: Column(
-        children: [
-          SmallWidget(),
-          SmallWidget(),
-          SmallWidget(),
-        ],
+    return const SingleChildScrollView(
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 12.0),
+        child: Column(
+          children: [
+            SmallWidget(),
+            SmallWidget(),
+            SmallWidget(),
+          ],
+        ),
       ),
     );
   }
 
+  //* Large Screen ____________________________________________________________
+
   Widget _bodyForLargeScreen(BuildContext context) {
-    return Column();
+    return const SingleChildScrollView(
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 48.0),
+        child: Column(
+          children: [
+            LargeWidget(),
+            LargeWidget(),
+            LargeWidget(),
+          ],
+        ),
+      ),
+    );
   }
 }

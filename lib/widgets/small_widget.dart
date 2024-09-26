@@ -51,6 +51,8 @@ class SmallWidget extends StatelessWidget {
     );
   }
 
+  //* Row of Texts ____________________________________________________________
+
   Widget _texts() {
     return const Column(
       crossAxisAlignment: CrossAxisAlignment.end,
